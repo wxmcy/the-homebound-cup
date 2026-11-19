@@ -4,7 +4,7 @@
   const art = window.CupArt;
   const key = "homebound-cup.season.v1";
   const groups = ["Arms","Chest","Legs"];
-  const judges = {impact:"Brass",balance:"Lyra"};
+  const judges = {impact:"Coach Reed",balance:"Coach Park"};
   const phases = ["arrival","ticket","training","stage","result"];
   const places = ["first","second","third"];
   const screens = ["home","story","gym","final"];
@@ -57,7 +57,7 @@
       }
       return items;
     }
-    const names=shuffle(["Juno Jet","Kip Comet","Taro Volt","Nova Finch","Vika Lux","Miro Flint"]);
+    const names=shuffle(["Riley Cruz","Jordan Bell","Nia Brooks","Mateo Ruiz","Casey Tran","Jules Wong"]);
     const looks=shuffle([...art.visitors]);
     const peak=19+Math.floor(next()*7);
     const low=1+Math.floor(next()*3);
@@ -164,13 +164,13 @@
     const ticket=season.phase==="ticket";
     const lead=leadJudge();
     $("story-frame").classList.toggle("ticket-scene",ticket);
-    $("story-place").textContent=ticket?"Vela Arena · Box office":"Planet Vela · The outer terraces";
-    $("story-title").textContent=ticket?"First place flies home.":"That’s a second moon.";
+    $("story-place").textContent=ticket?"Rookie Classic · Registration desk":"Neighborhood gym · After your workout";
+    $("story-title").textContent=ticket?"Your name is on the list.":"The sign-up sheet.";
     $("story-text").innerHTML=ticket?
-      `<p>Behind the glass, an alien clerk holds up a pair of orange shorts. Your name is stitched into the waistband.</p><p>“The Homebound Cup opens in thirty days,” she says. “Take first place in our bodybuilding final and the gate will take you back to Earth.”</p><p>She circles <strong>${judges[lead]}</strong> on your entry ticket. “Head judge this season. That score counts twice.” The locker room door clicks open.</p>`:
-      `<p>Your alarm goes off. You reach for your phone and come up with a handful of purple sand. One moon is setting. A second one is still climbing.</p><p>Something buzzes in your pocket. A silver ticket, warm against your thumb, bears a picture of Earth. From the arena below, a loudspeaker calls your name.</p>`;
-    $("story-prop").innerHTML=ticket?`<div class="paper-ticket"><div class="ticket-top"><span>Vela Arena</span><span>Final</span></div><strong>EARTH<br>RETURN</strong><div class="ticket-stub"><div><small>Head judge</small><b>${judges[lead]} · ${lead==="impact"?"Impact":"Balance"}</b></div><div class="barcode"></div></div></div>`:"";
-    $("next-story").textContent=ticket?"Enter the training room":"Follow the announcement";
+      `<p>The organizer hands you an entry card. Two local coaches will judge the show. Coach Reed likes a muscle group that stands out. Coach Park looks for balance across arms, chest, and legs.</p><p>“<strong>${judges[lead]}</strong> is our head judge this time,” the organizer says. “That score counts twice.”</p><p>Tomorrow was going to be leg day. You tuck the card into your training notebook, right beside the plan you wrote this morning.</p>`:
+      `<p>After your last set, your training partner takes a photo of your usual double-biceps pose. “Hang on,” they say. “I cut off your elbow again.”</p><p>By the water fountain, you spot a sign-up sheet for the Rookie Classic. Your gym is putting on a bodybuilding show in the community hall, thirty days from now. Everyone onstage will be competing for the first time.</p><p>“If you enter, I’ll get a picture with both elbows,” your partner says. They hand you the pen.</p>`;
+    $("story-prop").innerHTML=ticket?`<div class="paper-ticket"><div class="ticket-top"><span>Rookie Classic</span><span>Entry card</span></div><strong>FIRST<br>SHOW</strong><div class="ticket-stub"><div><small>Head judge</small><b>${judges[lead]} · ${lead==="impact"?"Impact":"Balance"}</b></div><div class="barcode"></div></div></div>`:"";
+    $("next-story").textContent=ticket?"Enter the training room":"Sign up for the show";
     if(ticket) pulse(document.querySelector(".story-copy"),"turn");
   }
   $("next-story").addEventListener("click",()=>{
@@ -187,8 +187,8 @@
   }
   function afterWorkout(index,total) {
     const comments=[
-      ["Your wrist wraps feel a little tighter.","The tailor adds another seam to each sleeve.","You catch sight of a biceps peak out of the corner of each eye.","You peek between your biceps to find the mirror."],
-      ["A new fold runs across your singlet.","The sponsor’s patch starts to stretch.","Your race number now curves around both sides of your chest.","The tailor measures your singlet with a length of climbing rope."],
+      ["Your wrist wraps feel a little tighter.","You reach for the sleeveless shirt in your gym bag.","You catch sight of a biceps peak out of the corner of each eye.","You peek between your biceps to find the mirror."],
+      ["A new fold runs across your singlet.","The little logo on your tank starts to stretch.","The front of your tank now wraps around both sides of your chest.","Your training partner takes two steps back to fit your chest in the photo."],
       ["Your shorts sit a little differently.","Your calves cast their own shadows.","You need a wider stance to see your shoes.","The locker room bench suddenly looks very narrow."]
     ];
     const stage=total>=23?3:total>=14?2:total>=6?1:0;
@@ -234,7 +234,7 @@
       return [
         "Those arms caught my eye. Give me a curl I can see from the last row.",
         "That chest makes quite an entrance. I could pick your silhouette out of a crowd.",
-        "I noticed those legs from the press box. That stance belongs on a poster."
+        "I could see those quads from across the weight room. Hold that pose on show night."
       ][counts.indexOf(high)];
     }
     if(high===low) return "All three groups have had an equal turn. That earns my highest balance score.";
@@ -301,19 +301,20 @@
     $("lineup").innerHTML=entries.map(e=>`<figure class="contestant ${e.id==="you"?"player":""}" aria-label="${e.name}, ${e.counts[0]} arm, ${e.counts[1]} chest, and ${e.counts[2]} leg workouts">${art.athlete(e.counts,e.look)}<figcaption>${e.name}</figcaption></figure>`).join("");
     $("curtain-call").hidden=result;
     $("verdict").hidden=!result;
-    $("stage-call").textContent=`You flex between ${entries[0].name} and ${entries[2].name}. ${judges[lead]} raises the deciding card.`;
-    $("final-title").textContent=result?"The official verdict.":"The Cup final.";
+    $("stage-call").textContent=`You find the strip of tape between ${entries[0].name} and ${entries[2].name} and hold the pose you practiced in the mirror. Your training partner lifts a phone in the front row.`;
+    $("final-title").textContent=result?"The official verdict.":"The Rookie Classic.";
     if(!result){pulse($("stage"),"enter");return;}
     $("stage").classList.remove("enter");
     const ranked=standings(entries,lead);
     const you=ranked.find(e=>e.id==="you");
     const win=you.place===1;
     const tied=ranked.filter(e=>e.place===you.place).length>1;
-    const note=win?(tied?"You share the title. The gate widens for everyone who tied for first.":"The clerk presses the Cup into your hands. The gate lights up blue.")+
-      (you.counts[0]>=23?" You turn sideways, squeeze your biceps through, and land beside your own bed.":" You step onto your bedroom rug. There is purple sand in your shoes."):
-      `The gate opens for ${ranked.filter(e=>e.place===1).map(e=>e.name).join(" and ")}. Back at your locker, you find a fresh ticket tucked into your shoes. Someone has penciled in next season’s date.`;
+    const winners=ranked.filter(e=>e.place===1).map(e=>e.name).join(" and ");
+    const note=win?(tied?"The judges announce a tie for first. You and your fellow winners each get a blue ribbon.":"The organizer pins a blue ribbon to your shirt. In the front row, your training partner holds up the phone for one more pose.")+
+      (you.counts[0]>=23?" Your partner backs up three rows to get both elbows in the photo.":" This time, both elbows make it into the photo."):
+      `First place goes to ${winners}. Your partner shows you a photo from the lineup. Both elbows are in the frame. It was taken before the scores went up. Now that you know the result, do you look at it differently?`;
     $("ending").classList.toggle("win",win);
-    $("ending").innerHTML=`<p class="eyebrow">${tied?"Shared ":""}${places[you.place-1]} place · ${you.total.toFixed(1)} points</p><h2>${win?"Next stop, Earth.":"One more season on Vela."}</h2><p>${note}</p>`;
+    $("ending").innerHTML=`<p class="eyebrow">${tied?"Shared ":""}${places[you.place-1]} place · ${you.total.toFixed(1)} points</p><h2>${win?"Your first blue ribbon.":"The photo from the front row."}</h2><p>${note}</p>`;
     renderTable();
   }
   $("reveal").addEventListener("click",()=>{

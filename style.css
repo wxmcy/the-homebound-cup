@@ -100,8 +100,8 @@ summary{cursor:pointer;font-weight:700;width:fit-content}
 
 .play-wrap{padding-block:clamp(1.45rem,3.4vw,3.3rem)}
 .story-layout{min-height:min(38rem,75vh);display:grid;grid-template-columns:1.05fr 1fr;background:var(--white);border:1px solid var(--line);overflow:hidden;border-radius:.4rem}
-.scene-art{position:relative;min-height:24rem;display:grid;place-items:center;overflow:hidden;background:linear-gradient(0deg,#28183255,transparent 50%),url("assets/arena.webp") 80% 54%/cover}
-.ticket-scene .scene-art{background:linear-gradient(125deg,#181425dd,#49334b88),url("assets/arena.webp") 70% center/cover}
+.scene-art{position:relative;min-height:24rem;display:grid;place-items:center;overflow:hidden;background:linear-gradient(0deg,#28183255,transparent 50%),url("assets/arena.webp?v=rookie") 80% 54%/cover}
+.ticket-scene .scene-art{background:linear-gradient(125deg,#181425dd,#49334b88),url("assets/arena.webp?v=rookie") 70% center/cover}
 #story-prop{width:min(77%,23rem)}
 .paper-ticket{border-radius:8px;background:#ffe1a8;color:#302634;box-shadow:8px 11px 0 #20182766;transform:rotate(-8deg);overflow:hidden}
 .ticket-top{background:#e58a48;padding:.55rem 1.25rem;font:800 1.1rem var(--display);letter-spacing:.08em;text-transform:uppercase;display:flex;justify-content:space-between}
@@ -128,7 +128,7 @@ summary{cursor:pointer;font-weight:700;width:fit-content}
 .mirror-button[aria-pressed=true]{color:var(--ink);background:var(--lilac)}
 .mirror-button:disabled{opacity:.5}
 .mirror-button .icon{width:1rem;height:1rem}
-.gym-canvas{position:relative;isolation:isolate;flex:1;min-height:19rem;display:grid;place-items:center;overflow:hidden;background:#46405a url("assets/training.webp") center/cover}
+.gym-canvas{position:relative;isolation:isolate;flex:1;min-height:19rem;display:grid;place-items:center;overflow:hidden;background:#46405a url("assets/training.webp?v=rookie") center/cover}
 .gym-canvas svg{position:absolute;inset:2% 0 1%;width:100%;height:97%;overflow:visible}
 .mirror-foot{min-height:2.6rem;justify-content:center;color:#f0e8f3;font-size:.92rem;text-align:center}
 .workout{background:var(--white);border:1px solid var(--line);border-radius:.45rem;padding:clamp(1rem,1.6vw,1.6rem)}
@@ -167,7 +167,7 @@ fieldset{padding:0;border:0;min-width:0}
 .coach h3{font-size:1.45rem}
 .coach p{font-size:.94rem;color:var(--muted);margin-top:.18rem}
 .cup-stamp{width:3.25rem;height:3.25rem;color:#9c5029}
-.stage{position:relative;isolation:isolate;overflow:hidden;border-radius:.45rem;background:#30243b url("assets/final.webp") center 59%/cover;color:white}
+.stage{position:relative;isolation:isolate;overflow:hidden;border-radius:.45rem;background:#30243b url("assets/final.webp?v=rookie") center 59%/cover;color:white}
 .lineup{position:relative;display:grid;grid-template-columns:repeat(3,minmax(0,1fr));align-items:end;margin:0 auto;width:92%;padding:1.5rem 0 .85rem}
 .contestant{display:grid;place-items:center;align-content:end;min-width:0}
 .contestant svg{width:100%;height:clamp(10rem,21vw,22rem);filter:drop-shadow(1px 3px 1px #21152c75)}

@@ -4,13 +4,13 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <meta name="theme-color" content="#171723">
-  <meta name="description" content="Wake up on another planet. Train for thirty days, face two alien judges, and discover whose idea of a winning body you are chasing. A playable sci-fi story.">
-  <title>30 Days to the Stage — The Homebound Cup</title>
+  <meta name="description" content="Enter your first local bodybuilding show. Choose thirty days of workouts and see how a judge’s idea of a winning body can shape the way you train.">
+  <title>30 Days to the Stage — The Rookie Classic</title>
   <link rel="icon" href="assets/cup.svg" type="image/svg+xml">
   <link rel="preload" href="assets/display-italic.woff2" as="font" type="font/woff2" crossorigin>
-  <link rel="stylesheet" href="style.css">
-  <script defer src="art.js"></script>
-  <script defer src="game.js"></script>
+  <link rel="stylesheet" href="style.css?v=rookie">
+  <script defer src="art.js?v=rookie"></script>
+  <script defer src="game.js?v=rookie"></script>
 </head>
 <body>
   <svg class="sprite" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
@@ -28,7 +28,7 @@
   <a class="skip" href="#content">Skip to content</a>
   <header class="mast">
     <div class="wrap mast-inner">
-      <a class="brand" href="#home" aria-label="The Homebound Cup home"><img src="assets/cup.svg" width="43" height="43" alt=""><span>HOMEBOUND <i>CUP</i></span></a>
+      <a class="brand" href="#home" aria-label="The Rookie Classic home"><img src="assets/cup.svg" width="43" height="43" alt=""><span>ROOKIE <i>CLASSIC</i></span></a>
       <nav aria-label="Site navigation">
         <a href="#rules"><span class="nav-long">How to play</span><span class="nav-short">Rules</span></a><a href="#about"><span class="nav-long">Behind the game</span><span class="nav-short">About</span></a>
         <button type="button" id="sound" class="sound" aria-pressed="false" aria-label="Enable game sounds"><svg class="icon" aria-hidden="true"><use href="#i-mute"/></svg><span>Sound off</span></button>
@@ -39,23 +39,23 @@
   <main id="content" tabindex="-1">
     <div id="home" class="screen">
       <section class="hero" aria-labelledby="game-title">
-        <img class="cover" src="assets/arena.webp" width="1659" height="948" fetchpriority="high" alt="An athlete looks across an alien valley toward an arena crowned by a glowing portal.">
+        <img class="cover" src="assets/arena.webp?v=rookie" width="1672" height="941" fetchpriority="high" alt="Two training partners stop at the gym noticeboard to look at a sign-up sheet.">
         <div class="hero-shade"></div>
         <div class="hero-content wrap">
-          <p class="eyebrow strokes">A sci-fi game about body image</p>
+          <p class="eyebrow strokes">A playable story about body image</p>
           <h1 id="game-title">30 DAYS<br><em>TO THE STAGE</em></h1>
-          <p class="deck">You wake up on a strange planet. Win its bodybuilding championship and you can go home to Earth. Whose idea of a winning body will you train for?</p>
+          <p class="deck">Your neighborhood gym is hosting a bodybuilding show for first-time competitors. You sign up to see what it feels like to pose onstage. With thirty days to train, whose idea of a winning body will you chase?</p>
           <div class="actions"><a href="#play" class="btn hot" id="play-link"><svg class="icon" aria-hidden="true"><use href="#i-play"/></svg><span>Start the story</span></a><button type="button" id="fresh" class="text-btn" hidden>Start over</button></div>
         </div>
       </section>
 
       <div class="wrap">
         <section class="program" id="rules" aria-labelledby="rules-title">
-          <div class="section-title"><p class="eyebrow line">How to play</p><h2 id="rules-title">Your road to the Cup.</h2></div>
+          <div class="section-title"><p class="eyebrow line">How to play</p><h2 id="rules-title">Your first show.</h2></div>
           <div class="steps">
-            <div><svg class="step-ico" aria-hidden="true"><use href="#i-ticket"/></svg><h3>Pick up your ticket.</h3><p>Follow the signal to the arena. Your entry ticket names the head judge for this season.</p></div>
-            <div><svg class="step-ico" aria-hidden="true"><use href="#i-arm"/></svg><h3>Shape your season.</h3><p>Choose arms, chest, or legs. Sleep to see them grow. Repeat a workout for five days to move faster.</p></div>
-            <div><svg class="step-ico" aria-hidden="true"><use href="#i-cup"/></svg><h3>Take the stage.</h3><p>Face two local rivals. First place opens the portal. After the verdict, swap the judges and see what changes.</p></div>
+            <div><svg class="step-ico" aria-hidden="true"><use href="#i-ticket"/></svg><h3>Put your name down.</h3><p>Find the Rookie Classic sign-up sheet after a workout. Your entry card explains what the judges will look for.</p></div>
+            <div><svg class="step-ico" aria-hidden="true"><use href="#i-arm"/></svg><h3>Plan your workouts.</h3><p>Choose arms, chest, or legs. Sleep to see them grow. Repeat a workout for five days to move faster.</p></div>
+            <div><svg class="step-ico" aria-hidden="true"><use href="#i-cup"/></svg><h3>Take the stage.</h3><p>Pose alongside two other first-time competitors. After the awards, swap head judges and see how the same lineup scores.</p></div>
           </div>
         </section>
         <section class="notes" id="about" aria-labelledby="about-title">
@@ -67,8 +67,8 @@
           </div>
           <aside class="judges" aria-label="Meet the judges">
             <p class="eyebrow">Meet the judges</p>
-            <div class="judge"><span class="portrait" data-portrait="impact" aria-hidden="true"></span><div><h3>Brass <small>Impact</small></h3><p>“I want to recognize your silhouette from the cheap seats.”</p></div></div>
-            <div class="judge"><span class="portrait" data-portrait="balance" aria-hidden="true"></span><div><h3>Lyra <small>Balance</small></h3><p>“Arms, chest, legs. I like all three to have a say.”</p></div></div>
+            <div class="judge"><span class="portrait" data-portrait="impact" aria-hidden="true"></span><div><h3>Coach Reed <small>Impact</small></h3><p>“I want to recognize your pose from the back row.”</p></div></div>
+            <div class="judge"><span class="portrait" data-portrait="balance" aria-hidden="true"></span><div><h3>Coach Park <small>Balance</small></h3><p>“Arms, chest, legs. I like all three to have a say.”</p></div></div>
             <p class="panel-note">The head judge’s score counts twice. Each season, either judge can take the lead.</p>
           </aside>
         </section>
@@ -83,7 +83,7 @@
     </section>
 
     <section id="gym" class="screen wrap play-wrap" aria-labelledby="gym-title" hidden>
-      <div class="play-heading"><div><p class="eyebrow line">Vela · Athletes’ quarters</p><h1 tabindex="-1" id="gym-title">The training room.</h1></div><div class="day-chip"><span>Training day</span><strong id="day">01 / 30</strong></div></div>
+      <div class="play-heading"><div><p class="eyebrow line">Neighborhood gym · Weight room</p><h1 tabindex="-1" id="gym-title">The training room.</h1></div><div class="day-chip"><span>Training day</span><strong id="day">01 / 30</strong></div></div>
       <div class="gym-layout">
         <figure class="mirror-frame">
           <div class="mirror-head"><span class="mono" id="mirror-label">Training mirror</span><button type="button" id="compare" class="mirror-button" aria-pressed="false"><svg class="icon" aria-hidden="true"><use href="#i-mirror"/></svg><span>View Day 1</span></button></div>
@@ -105,7 +105,7 @@
     </section>
 
     <section id="final" class="screen wrap play-wrap" aria-labelledby="final-title" hidden>
-      <div class="play-heading"><div><p class="eyebrow line">Vela Arena · Competition night</p><h1 tabindex="-1" id="final-title">The Cup final.</h1></div><svg class="cup-stamp" aria-hidden="true"><use href="#i-cup"/></svg></div>
+      <div class="play-heading"><div><p class="eyebrow line">Community hall · Show night</p><h1 tabindex="-1" id="final-title">The Rookie Classic.</h1></div><svg class="cup-stamp" aria-hidden="true"><use href="#i-cup"/></svg></div>
       <div class="stage" id="stage"><div class="stage-lights" aria-hidden="true"></div><div class="lineup" id="lineup"></div></div>
       <div id="curtain-call" class="curtain"><div><h2>The scorecards are in.</h2><p id="stage-call"></p></div><button type="button" class="btn hot" id="reveal">Reveal the verdict</button></div>
       <div id="verdict" hidden>
@@ -114,14 +114,14 @@
           <div class="score-header"><div><p class="eyebrow line">Judges’ scorecards</p><h2 id="score-title">What if the other judge led?</h2></div><button type="button" id="swap" class="btn outline" aria-pressed="false">Swap head judges</button></div>
           <p id="score-caption" role="status"></p>
           <table><caption class="sr-only">Contestant rankings and judges’ scores out of 100</caption><thead><tr><th scope="col">Place</th><th scope="col">Athlete</th><th scope="col">Impact</th><th scope="col">Balance</th><th scope="col">Total</th></tr></thead><tbody id="scores"></tbody></table>
-          <details class="scoring"><summary>How the scores work</summary><p>Brass awards more impact points as the most-trained group grows. Lyra awards more balance points as the gap between the most- and least-trained groups shrinks. Each judge gives up to 100 points. The head judge counts twice in the average. Athletes tied for first share the title and the trip home.</p></details>
+          <details class="scoring"><summary>How the scores work</summary><p>Coach Reed awards more impact points as the most-trained group grows. Coach Park awards more balance points as the gap between the most- and least-trained groups shrinks. Each judge gives up to 100 points. The head judge counts twice in the average. Athletes tied for first share the title.</p></details>
           <div class="last-actions"><button type="button" class="btn dark" id="replay">Play a new season</button><a href="#about">Behind the game</a></div>
         </section>
       </div>
     </section>
   </main>
 
-  <footer class="site-foot"><div class="wrap"><span>The Homebound Cup</span><div class="foot-links"><span>WCWP 100 · Interactive writing project</span><a href="credits.html">Art credits</a></div></div></footer>
+  <footer class="site-foot"><div class="wrap"><span>The Rookie Classic</span><div class="foot-links"><span>WCWP 100 · Interactive writing project</span><a href="credits.html">Art credits</a></div></div></footer>
   <dialog id="reset-dialog"><h2>Start a new season?</h2><p>This replaces the season saved in this browser and draws a new panel and two rivals.</p><form method="dialog"><button class="btn outline" value="cancel" autofocus>Keep my season</button><button class="btn hot" value="restart">Start over</button></form></dialog>
   <noscript><p class="no-js">Enable JavaScript to play the game. The introduction and project notes are available above.</p></noscript>
 </body>
